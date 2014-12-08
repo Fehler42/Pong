@@ -52,13 +52,13 @@ namespace Pong
             bool Down = map.isWalckable((int)(this.getPosition().X) / 50, (int)(this.getPosition().Y + this.getHeight() + runningSpeed) / 50) && map.isWalckable((int)(this.getPosition().X + this.getWidth()) / 50, (int)(this.getPosition().Y + this.getHeight() + runningSpeed) / 50);
 
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.J) && Left)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Left) && Left)
                 playerPosition2 = new Vector2f(playerPosition2.X - runningSpeed, playerPosition2.Y);
-            if (Keyboard.IsKeyPressed(Keyboard.Key.L) && Right)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Right) && Right)
                 playerPosition2 = new Vector2f(playerPosition2.X + runningSpeed, playerPosition2.Y);
-            /* if (Keyboard.IsKeyPressed(Keyboard.Key.W) && Up)
+            /* if (Keyboard.IsKeyPressed(Keyboard.Key.Up) && Up)
                 playerPosition = new Vector2f(playerPosition.X, playerPosition.Y - runningSpeed);
-            if (Keyboard.IsKeyPressed(Keyboard.Key.S) && Down)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Down) && Down)
                 playerPosition = new Vector2f(playerPosition.X, playerPosition.Y + runningSpeed); */
 
             playerSprite2.Position = playerPosition2;

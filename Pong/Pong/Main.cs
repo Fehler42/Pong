@@ -44,13 +44,13 @@ namespace Pong
             ((RenderWindow)sender).Close();
         }
 
-        static Player player;
+        static Player player1;
         static Player2 player2;
         static Map map;
 
         static void initialize()
         {
-            player = new Player();
+            player1 = new Player();
             player2 = new Player2();
             map = new Map();
 
@@ -63,7 +63,8 @@ namespace Pong
 
         static void update(GameTime time)
         {
-            player.move(map, time);
+            player1.move(map, time);
+            player2.move(map, time);
         }
 
         static void draw(RenderWindow win, GameTime time)
@@ -71,7 +72,7 @@ namespace Pong
 
             win.Clear(new Color(0, 0, 255));
             map.draw(win);
-            player.draw(win);
+            player1.draw(win);
             player2.draw(win);
             win.Display();
         }
