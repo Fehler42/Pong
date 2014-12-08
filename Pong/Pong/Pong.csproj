@@ -50,7 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="GameTime.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Player1.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Player2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
