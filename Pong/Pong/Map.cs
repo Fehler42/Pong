@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Window;
+using SFML.Graphics;
 
 namespace Pong
 {
@@ -44,11 +46,11 @@ namespace Pong
                 {
                     if (mapInt[i, j] == 0)
                     {
-                        mapTiles[i, j] = new Tile(true, "Pictures/tile1.png", new Vector2f((float)(50 * i), (float)(50 * j)));
+                        mapTiles[i, j] = new Tile(true, "Pics/tile1.png", new Vector2f((float)(50 * i), (float)(50 * j)));
                     }
                     else
                     {
-                        mapTiles[i, j] = new Tile(false, "Pictures/tile2.png", new Vector2f((float)(50 * i), (float)(50 * j)));
+                        mapTiles[i, j] = new Tile(false, "Pics/tile2.png", new Vector2f((float)(50 * i), (float)(50 * j)));
                     }
                 }
             }

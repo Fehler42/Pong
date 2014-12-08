@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Window;
+using SFML.Graphics;
 
 namespace Pong
 {
-    class Main
+    class Game
     {
 
         public static void Main()
@@ -44,6 +46,7 @@ namespace Pong
 
         static Player player;
         static Player2 player2;
+        static Map map;
 
         static void initialize()
         {

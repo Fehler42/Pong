@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Window;
+using SFML.Graphics;
 
 namespace Pong
 {
@@ -31,7 +33,7 @@ namespace Pong
 
         public Player()
         {
-            Texture playerTexture = new Texture("Pictures/player.png");
+            Texture playerTexture = new Texture("Pics/player.png");
             playerSprite = new Sprite(playerTexture);
 
             playerPosition = new Vector2f(51, 51);
