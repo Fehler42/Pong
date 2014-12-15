@@ -10,7 +10,7 @@ namespace Pong
 {
     class Map
     {
-        Tile[,] mapTiles;                                       // Haben halt keine Tiles ... nö?
+        Tile[,] mapTiles;                                       
         int[,] mapInt;
 
         public bool isWalckable(int i, int j)
