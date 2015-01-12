@@ -35,7 +35,7 @@ namespace Pong
 
         public Player2()
         {
-            Texture playerTexture = new Texture("Pics/player.png");
+            Texture playerTexture = new Texture("Pics/player2.png");
             playerSprite2 = new Sprite(playerTexture);
 
             playerPosition2 = new Vector2f(51, 500);
