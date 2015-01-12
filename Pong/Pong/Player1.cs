@@ -42,24 +42,15 @@ namespace Pong
             playerSprite.Scale = new Vector2f(0.2f, 0.05f);
         }
 
-        public void move(Map map, GameTime time)
+        public void move(GameTime time)
         {
             float runningSpeed = 0.3f * time.EllapsedTime.Milliseconds;
 
-            bool Left = map.isWalckable((int)(this.getPosition().X - runningSpeed) / 50, (int)(this.getPosition().Y) / 50) && map.isWalckable((int)(this.getPosition().X - runningSpeed) / 50, (int)(this.getPosition().Y + this.getHeight()) / 50);
-            bool Right = map.isWalckable((int)(this.getPosition().X + this.getWidth() + runningSpeed) / 50, (int)(this.getPosition().Y) / 50) && map.isWalckable((int)(this.getPosition().X + this.getWidth() + runningSpeed) / 50, (int)(this.getPosition().Y + this.getHeight()) / 50);
-            bool Up = map.isWalckable((int)(this.getPosition().X) / 50, (int)(this.getPosition().Y - runningSpeed) / 50) && map.isWalckable((int)(this.getPosition().X + this.getWidth()) / 50, (int)(this.getPosition().Y - runningSpeed) / 50);
-            bool Down = map.isWalckable((int)(this.getPosition().X) / 50, (int)(this.getPosition().Y + this.getHeight() + runningSpeed) / 50) && map.isWalckable((int)(this.getPosition().X + this.getWidth()) / 50, (int)(this.getPosition().Y + this.getHeight() + runningSpeed) / 50);
-
-
-            if (Keyboard.IsKeyPressed(Keyboard.Key.A) && Left)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.A))
                 playerPosition = new Vector2f(playerPosition.X - runningSpeed, playerPosition.Y);
-            if (Keyboard.IsKeyPressed(Keyboard.Key.D) && Right)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D))
                 playerPosition = new Vector2f(playerPosition.X + runningSpeed, playerPosition.Y);
-            /* if (Keyboard.IsKeyPressed(Keyboard.Key.W) && Up)
-                playerPosition = new Vector2f(playerPosition.X, playerPosition.Y - runningSpeed);
-            if (Keyboard.IsKeyPressed(Keyboard.Key.S) && Down)
-                playerPosition = new Vector2f(playerPosition.X, playerPosition.Y + runningSpeed); */
+
 
             playerSprite.Position = playerPosition;
         }
