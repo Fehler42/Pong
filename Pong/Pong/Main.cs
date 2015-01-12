@@ -46,14 +46,12 @@ namespace Pong
 
         static Player player1;
         static Player2 player2;
-        
-
+        static Ball ball;
         static void initialize()
         {
             player1 = new Player();
             player2 = new Player2();
-            
-
+            ball = new Ball();
         }
 
         static void loadContent()
@@ -65,6 +63,12 @@ namespace Pong
         {
             player1.move(time);
             player2.move(time);
+            ball.move();
+            if (collision(player1.getPosition(),player1.getHeight(),player1.getWidth(),ball.getPosition(),ball.getHeight(),ball.getWidth())==true)
+                ball.setDirection(new Vector2f(0, 0.2f));
+            if (collision(player2.getPosition(), player2.getHeight(), player2.getWidth(), ball.getPosition(), ball.getHeight(), ball.getWidth()) == true)
+                ball.setDirection(new Vector2f(0, -0.2f));
+    
         }
 
         static void draw(RenderWindow win, GameTime time)
@@ -73,11 +77,13 @@ namespace Pong
             win.Clear(new Color(0, 0, 0));
             player1.draw(win);
             player2.draw(win);
+            ball.draw(win);
             win.Display();
         }
 
         static bool collision(Vector2f obj1, float hObj1, float wObj1, Vector2f obj2, float hObj2, float wObj2)
         {
+           
             Vector2f Mobj1 = new Vector2f(obj1.X + wObj1 / 2, obj1.Y + hObj1 / 2);
             Vector2f Mobj2 = new Vector2f(obj2.X + wObj2 / 2, obj2.Y + hObj2 / 2);
 
@@ -95,7 +101,8 @@ namespace Pong
 
             else
                 return false;
-        }
+      
 
+        }
     }
 }

@@ -47,9 +47,9 @@ namespace Pong
             float runningSpeed = 0.3f * time.EllapsedTime.Milliseconds;
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.A))
-                playerPosition = new Vector2f(playerPosition.X - runningSpeed, playerPosition.Y);
+                playerPosition = new Vector2f(playerPosition.X -0.2f, playerPosition.Y);
             if (Keyboard.IsKeyPressed(Keyboard.Key.D))
-                playerPosition = new Vector2f(playerPosition.X + runningSpeed, playerPosition.Y);
+                playerPosition = new Vector2f(playerPosition.X +0.2f, playerPosition.Y);
 
 
             playerSprite.Position = playerPosition;

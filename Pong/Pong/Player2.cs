@@ -50,9 +50,9 @@ namespace Pong
             
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
-                playerPosition2 = new Vector2f(playerPosition2.X - runningSpeed, playerPosition2.Y);
+                playerPosition2 = new Vector2f(playerPosition2.X - 0.2f, playerPosition2.Y);
             if (Keyboard.IsKeyPressed(Keyboard.Key.Right))
-                playerPosition2 = new Vector2f(playerPosition2.X + runningSpeed, playerPosition2.Y);
+                playerPosition2 = new Vector2f(playerPosition2.X + 0.2f, playerPosition2.Y);
 
 
             playerSprite2.Position = playerPosition2;

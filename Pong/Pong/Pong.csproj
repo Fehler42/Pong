@@ -53,6 +53,7 @@
     <Compile Include="GameTime.cs" />
     <Compile Include="Player1.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Ball1.cs" />
     <Compile Include="Player2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
