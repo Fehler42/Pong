@@ -38,7 +38,7 @@ namespace Pong
             Texture playerTexture = new Texture("Pics/player2.png");
             playerSprite2 = new Sprite(playerTexture);
 
-            playerPosition2 = new Vector2f(51, 500);
+            playerPosition2 = new Vector2f(340, 500);
             playerSprite2.Position = playerPosition2;
 
             playerSprite2.Scale = new Vector2f(0.2f, 0.05f);
