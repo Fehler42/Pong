@@ -39,7 +39,7 @@ namespace Pong
             playerPosition = new Vector2f(340, 51);
             playerSprite.Position = playerPosition;
 
-            playerSprite.Scale = new Vector2f(0.2f, 0.05f);
+            playerSprite.Scale = new Vector2f(1,1);// new Vector2f(0.2f, 0.05f);
         }
 
         public void move(GameTime time)
@@ -47,9 +47,9 @@ namespace Pong
             float runningSpeed = 0.3f * time.EllapsedTime.Milliseconds;
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.A))
-                playerPosition = new Vector2f(playerPosition.X -0.2f, playerPosition.Y);
+                playerPosition = new Vector2f(playerPosition.X -3.2f, playerPosition.Y);
             if (Keyboard.IsKeyPressed(Keyboard.Key.D))
-                playerPosition = new Vector2f(playerPosition.X +0.2f, playerPosition.Y);
+                playerPosition = new Vector2f(playerPosition.X +3.2f, playerPosition.Y);
 
 
             playerSprite.Position = playerPosition;

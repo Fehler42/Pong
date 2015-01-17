@@ -23,6 +23,11 @@ namespace Pong
         {
             Direction = newdirection;
         }
+        public void setDirection(float x, float y)
+        {
+            Direction.X = x;
+            Direction.Y = y;
+        }
         public Vector2f getDirection()
         {
             return Direction;
@@ -37,6 +42,25 @@ namespace Pong
             return Tilesprite.Texture.Size.X * Tilesprite.Scale.X;
         }
 
+    public float getPosition_x()
+        {
+            return Ballposition.X;
+        }
+    public float getPosition_y()
+    {
+        return Ballposition.Y;
+    }
+        public float invert_x(){
+            return Direction.X * -1;
+        }
+        public float getDirection_y()
+        {
+            return Direction.Y;
+        }
+        public float getDirection_x()
+        {
+            return Direction.X;
+        }
         public Ball()
         {
             Texture Balltexture = new Texture("Pics/Ball.png");
@@ -44,7 +68,7 @@ namespace Pong
 
             Ballposition = new Vector2f(400, 300);
             Tilesprite.Position = Ballposition;
-            Direction = new Vector2f(0, 0.2f);
+            Direction = new Vector2f(0, 4.2f);
             Ballposition += Direction;
             Tilesprite.Position = Ballposition;
         }
@@ -68,6 +92,7 @@ namespace Pong
             Ballposition += Direction;
             Tilesprite.Position = Ballposition;
         }
+       
     }
 }
 

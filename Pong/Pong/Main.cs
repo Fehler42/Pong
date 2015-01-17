@@ -17,14 +17,14 @@ namespace Pong
             RenderWindow win = new RenderWindow(new VideoMode(800, 600), "Mein erstes Fenster");
 
             GameTime time = new GameTime();
+            win.SetFramerateLimit(120);
             // Achte darauf, ob Fenster geschlossen wird
             win.Closed += win_Closed;
 
             initialize();
             loadContent();
-
             time.start();
-
+         
             // Das eigentliche Spiel
             while (win.IsOpen())
             {
@@ -52,11 +52,12 @@ namespace Pong
             player1 = new Player();
             player2 = new Player2();
             ball = new Ball();
+            
         }
 
         static void loadContent()
         {
-
+        
         }
 
         static void update(GameTime time)
@@ -64,13 +65,29 @@ namespace Pong
             player1.move(time);
             player2.move(time);
             ball.move();
-            if (collision(player1.getPosition(),player1.getHeight(),player1.getWidth(),ball.getPosition(),ball.getHeight(),ball.getWidth())==true)
-                ball.setDirection(new Vector2f(0, 0.2f));
-            if (collision(player2.getPosition(), player2.getHeight(), player2.getWidth(), ball.getPosition(), ball.getHeight(), ball.getWidth()) == true)
-                ball.setDirection(new Vector2f(0, -0.2f));
-    
+             Random random = new Random();
+             float n = (float)(random.NextDouble()*2);
+            int rnd_int=random.Next(1, 3);
+            if (collision(player1.getPosition(), player1.getHeight(), player1.getWidth(), ball.getPosition(), ball.getHeight(), ball.getWidth()) == true) {
+                ;
+                if (rnd_int == 1)
+                    ball.setDirection(new Vector2f(n, -ball.getDirection_y() + 0.05f));
+                else ball.setDirection(new Vector2f(-n, -ball.getDirection_y() + 0.05f));
+            }
+            if (collision(player2.getPosition(), player2.getHeight(), player2.getWidth(), ball.getPosition(), ball.getHeight(), ball.getWidth()) == true) {
+               
+                if (rnd_int == 1)
+                    ball.setDirection(new Vector2f(n, -ball.getDirection_y() - 0.05f));
+                else ball.setDirection(new Vector2f(-n, -ball.getDirection_y() - 0.05f));
         }
-
+            if (ball.getPosition_x() < 5 || ball.getPosition_x() > 745)
+            {
+                ball.setDirection(ball.invert_x(),ball.getDirection_y()); 
+            }
+          
+        
+        }
+        
         static void draw(RenderWindow win, GameTime time)
         {
 
@@ -79,6 +96,8 @@ namespace Pong
             player2.draw(win);
             ball.draw(win);
             win.Display();
+
+          
         }
 
         static bool collision(Vector2f obj1, float hObj1, float wObj1, Vector2f obj2, float hObj2, float wObj2)
@@ -103,6 +122,16 @@ namespace Pong
                 return false;
       
 
+        }
+
+        static void ende(RenderWindow win) // nicht impementiert
+        {
+            if (ball.getPosition_y() < 1 || ball.getPosition_y() > 579)
+            {
+                Sprite Sieg1 = new Sprite(new Texture("pics/Sieg1"));
+                win.Draw(Sieg1);
+                
+            }  
         }
     }
 }

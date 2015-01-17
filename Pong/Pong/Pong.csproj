@@ -99,6 +99,7 @@
     <Content Include="Pics\player.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Pics\Sieg1.png" />
     <Content Include="Pics\tile1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

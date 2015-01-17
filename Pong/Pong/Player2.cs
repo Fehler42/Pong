@@ -38,10 +38,10 @@ namespace Pong
             Texture playerTexture = new Texture("Pics/player2.png");
             playerSprite2 = new Sprite(playerTexture);
 
-            playerPosition2 = new Vector2f(340, 500);
+            playerPosition2 = new Vector2f(340, 540);
             playerSprite2.Position = playerPosition2;
 
-            playerSprite2.Scale = new Vector2f(0.2f, 0.05f);
+            playerSprite2.Scale = new Vector2f(1, 1); //new Vector2f(0.2f, 0.05f);
         }
 
         public void move(GameTime time)
@@ -50,9 +50,9 @@ namespace Pong
             
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
-                playerPosition2 = new Vector2f(playerPosition2.X - 0.2f, playerPosition2.Y);
+                playerPosition2 = new Vector2f(playerPosition2.X - 3.2f, playerPosition2.Y);
             if (Keyboard.IsKeyPressed(Keyboard.Key.Right))
-                playerPosition2 = new Vector2f(playerPosition2.X + 0.2f, playerPosition2.Y);
+                playerPosition2 = new Vector2f(playerPosition2.X + 3.2f, playerPosition2.Y);
 
 
             playerSprite2.Position = playerPosition2;
