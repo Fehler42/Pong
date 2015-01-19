@@ -19,6 +19,10 @@ namespace Pong
         {
             return Ballposition;
         }
+        public void setPosition(Vector2f newposition)
+        {
+            Ballposition = newposition;
+        }
         public void setDirection(Vector2f newdirection)
         {
             Direction = newdirection;

@@ -84,8 +84,12 @@ namespace Pong
             {
                 ball.setDirection(ball.invert_x(),ball.getDirection_y()); 
             }
-          
-        
+            if (ball.getPosition_y() < 1 || ball.getPosition_y() > 579)
+            {
+                ende();
+                ball.setDirection(new Vector2f(ball.getDirection_x(),-ball.getDirection_y()));
+               
+            }
         }
         
         static void draw(RenderWindow win, GameTime time)
@@ -124,14 +128,13 @@ namespace Pong
 
         }
 
-        static void ende(RenderWindow win) // nicht impementiert
+        static void ende() // nicht impementiert
         {
-            if (ball.getPosition_y() < 1 || ball.getPosition_y() > 579)
-            {
-                Sprite Sieg1 = new Sprite(new Texture("pics/Sieg1"));
-                win.Draw(Sieg1);
-                
-            }  
+          
+               // Sprite Sieg1 = new Sprite(new Texture("pics/Sieg1"));
+               // win.Draw(Sieg1);
+                ball.setPosition(new Vector2f (400, 300)) ;      
+            
         }
     }
 }
